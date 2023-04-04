@@ -1,9 +1,4 @@
-import usePokemonSource from "./hooks/customHook";
-import {
-  PokemonContext,
-  PokemonProvider,
-  usePokemon,
-} from "./hooks/customHook";
+import { PokemonProvider, usePokemon } from "./hooks/customHook";
 
 function SearchBox() {
   return (
