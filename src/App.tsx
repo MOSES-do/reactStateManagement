@@ -1,16 +1,12 @@
 import { PokemonProvider } from "./hooks/customHook";
+import PokemonDetail from "./components/PokemonDetail";
 import { SearchBox } from "./components/SearchBox";
 import { PokemonList } from "./components/PokemonList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Link,
-  Outlet,
-  ReactLocation,
-  Router,
-  useMatch,
-} from "@tanstack/react-location";
+import { Outlet, ReactLocation, Router } from "@tanstack/react-location";
 
 const queryClient = new QueryClient();
+const location = new ReactLocation();
 
 const routes = [
   {
@@ -19,6 +15,15 @@ const routes = [
       <>
         <SearchBox />
         <PokemonList />
+      </>
+    ),
+  },
+
+  {
+    path: "/pokemon/:id",
+    element: (
+      <>
+        <PokemonDetail />
       </>
     ),
   },
